@@ -73,9 +73,11 @@
           </label>
         </form>
   </h3>
-
+<div>
 <br>
-    <a href="{% url 'filters' %}">
+    <a href="{% url 'filters' %}"
+    class="text-blue-500"
+            style = font-size:120%;>
         <u><b>
        Filter
 </b> </u> </a>
@@ -85,9 +87,13 @@
             style = font-size:120%;>
             <title>add</title>
 <u><b>
-        Add Platform
+</div>
+    <div>
+         Add Platform
 </b> </u> </a>
-      </div>
+    </div>
+</div>
+
 
 
 
@@ -95,11 +101,17 @@
 <br>
 <div class="mt-1 px-7 py-1 bg-gray-100 rounded-sm">
     <h3 style = font-family:Perpetua; class="text-3xl text-gray-900">{{ i.title }}</h3>
+    <img src="{{ i.image.url }}" alt="{{ i.title }}" style="max-width: 100%; height: auto;">
     <p class="text-gray-900">BDT {{ i.price }}</p>
     <p class="text-gray-700 text-sm">{{ i.location }}</p>
+    <div>
     <a href="{% url 'details' i.id %}" class="text-blue-500">
         View details
-    </a>
+    </a> </div>
+    <div>
+        <a href="{% url 'bidding' %}"class="text-blue-500">Bid Now</a>
+    </div>
+
 
 
     {% if request.user.is_staff %}
@@ -113,12 +125,13 @@
 </div>
 
 {% endfor %} <br>
+
     {% endblock content %}
 </div>
 
 </div>
 
-
+</div>
   <!-- Link to Bootstrap JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStv5KS5m7O9x94DS6z3HI3ZlM3z4bO8o6Amv9F4mc7"

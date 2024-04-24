@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from platforms.forms import SearchForm
+#from .models import House
 
 
 # Create your views here.
@@ -129,3 +130,7 @@ def filters(request):
         'form': form,
         'unique_property_types': unique_property_types
     })
+
+def bidding_view(request):
+    #house = House.objects.get(pk=1)
+    return render(request, 'bidding.html', {'house': home})

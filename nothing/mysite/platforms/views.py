@@ -35,4 +35,5 @@ def delete_platform(request, p_id):
     Platform.objects.get(pk=p_id).delete()
     return redirect("home")
 
-
+def bidding_view(request):
+    return render(request, 'bidding.html')

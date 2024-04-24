@@ -1,7 +1,8 @@
 from django.db import models
 
 
-# Create your models here.
+
+
 class Platform(models.Model):
     property_type_choices = [
         ('Residential', 'Residential'),
@@ -20,8 +21,10 @@ class Platform(models.Model):
     city = models.CharField(max_length=50)
     country = models.CharField(max_length=50)
     listed_date = models.DateField(auto_now_add=True)
+    image = models.ImageField(default='houses.png', blank=True)
 
-    # image = models.ImageField()
+    # Define a ForeignKey field to associate each platform with a house
+    #house = models.ForeignKey(House, on_delete=models.CASCADE, related_name='platforms')
 
     def __str__(self):
         return self.title
